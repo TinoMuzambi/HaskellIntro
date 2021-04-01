@@ -1,2 +1,3 @@
 perms :: [Int] -> [[Int]]
 
+perms [] = []
