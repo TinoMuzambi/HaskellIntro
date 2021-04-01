@@ -1,6 +1,7 @@
 mySplit :: [Int] -> Int -> [([Int], [Int])]
 
-mySplit xs n  = [splitAt n xs]
+mySplit xs 3 = [splitAt 3 xs]
+mySplit xs n  = [splitAt n xs] ++ mySplit xs (n + 1)
 
 split :: [Int] -> [([Int], [Int])]
 
