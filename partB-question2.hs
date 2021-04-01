@@ -1,3 +1,5 @@
+delete :: Int -> [Int] -> [Int]
+
 delete n [] = []
 delete n (x:xs)
     | (n == x) = xs
