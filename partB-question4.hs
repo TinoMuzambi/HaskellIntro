@@ -1,7 +1,7 @@
-mySplit :: Int -> [Int] -> [([Int], [Int])]
+mySplit :: [Int] -> Int -> [([Int], [Int])]
 
-mySplit n xs = [splitAt n xs]
+mySplit xs n  = [splitAt n xs]
 
 split :: [Int] -> [([Int], [Int])]
 
-split xs = mySplit (length xs) xs
+split xs = mySplit xs 1 
