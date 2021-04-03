@@ -1,4 +1,10 @@
 safetail :: [a] -> [a]
 
-safetail [] = []
-safetail xs = tail xs
+safetail xs = if null xs
+                    then []
+                else tail xs
+
+safetail3 :: [a] -> [a]
+
+safetail3 [] = []
+safetail3 xs = tail xs
