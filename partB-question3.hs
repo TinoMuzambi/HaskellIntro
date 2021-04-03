@@ -1,10 +1,10 @@
--- delete :: Int -> [Int] -> [Int]
+delete :: Int -> [Int] -> [Int]
 
--- delete n [] = []
--- delete n (x:xs)
---     | (n == x) = xs
---     | otherwise = x : delete n xs
-import partB-question2
+delete n [] = []
+delete n (x:xs)
+    | (n == x) = xs
+    | otherwise = x : delete n xs
+
 
 perms :: [Int] -> [[Int]]
 
