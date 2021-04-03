@@ -6,7 +6,9 @@ safetail xs = if null xs
 
 safetail2 :: [a] -> [a]
 
-safetail2 xs = [x | x <- tail xs, not (null xs)]
+safetail2 xs
+        | null xs = []
+        | otherwise = tail xs
 
 safetail3 :: [a] -> [a]
 
