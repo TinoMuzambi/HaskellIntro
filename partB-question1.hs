@@ -7,10 +7,9 @@ apply Mul x y = x * y
 
 eval :: Expr -> Int
 eval (Val n) = n
-eval (Add x y) = eval x + eval y
-eval (Mul x y) = eval x * eval y
+eval (App o l r) = apply o (eval l) (eval r)
 
 values :: Expr -> [Int]
 values (Val n) = [n]
-values (Add x y) = values x ++ values y 
-values (Mul x y) = values x ++ values y 
+-- values (Add x y) = values x ++ values y 
+-- values (Mul x y) = values x ++ values y 
