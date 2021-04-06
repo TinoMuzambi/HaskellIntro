@@ -7,7 +7,7 @@ apply Mul x y = x * y
 
 eval :: Expr -> Int
 eval (Val n) = n
-eval (App o l r) = apply o (eval l) (eval r)
+eval (App o left right) = apply o (eval left) (eval right)
 
 values :: Expr -> [Int]
 values (Val n) = [n]
