@@ -3,6 +3,6 @@ data Expr = Val Int
         | Mul Expr Expr
 
 solve :: [Int] -> Int -> [Expr]
-solve ns n = [e | ns' <- choices ns
-                , e <- exprs ns'
-                , eval e == [n]]
+solve xs x = [e | xs' <- choices xs
+                , e <- exprs xs'
+                , eval e == [x]]
