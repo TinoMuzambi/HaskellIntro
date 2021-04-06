@@ -1,6 +1,7 @@
-data Expr = Val Int 
-        | Add Expr Expr 
-        | Mul Expr Expr
+data Expr = Val Int | App Op Expr Expr
+data Op = Add | Mul
+
+apply :: Op -> Int -> Int -> Int
 
 eval :: Expr -> Int
 eval (Val n) = n
