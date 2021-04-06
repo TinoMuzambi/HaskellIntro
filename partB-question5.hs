@@ -17,10 +17,10 @@ data Op = Add | Mul
 exprs :: [Int] -> [Expr]
 exprs [] = []
 exprs [n] = [Val n]
-exprs ns = [e | (ls,rs) <- split ns
-                , l <- exprs ls
-                , r <- exprs rs
-                , e <- combine l r]
+exprs xs = [e | (ls,rs) <- split xs
+                , x <- exprs ls
+                , y <- exprs rs
+                , e <- combine x y]
 
 combine :: Expr -> Expr -> [Expr]
-combine l r = [App o l r | o <- [Add,Mul]]
+combine l r = [App o x y | o <- [Add,Mul]]
