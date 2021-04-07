@@ -47,16 +47,16 @@ split xs = if 2 == (length xs)
         else mySplit xs 1 True
 
 -- Question 5
--- combine :: Expr -> Expr -> [Expr]
--- combine l r = [App o x y | o <- [Add,Mul]]
+combine :: Expr -> Expr -> [Expr]
+combine x y = [App o x y | o <- [Add,Mul]]
 
--- exprs :: [Int] -> [Expr]
--- exprs [] = []
--- exprs [n] = [Val n]
--- exprs xs = [e | (ls,rs) <- split xs
---                 , x <- exprs ls
---                 , y <- exprs rs
---                 , e <- combine x y]
+exprs :: [Int] -> [Expr]
+exprs [] = []
+exprs [n] = [Val n]
+exprs xs = [e | (ls,rs) <- split xs
+                , x <- exprs ls
+                , y <- exprs rs
+                , e <- combine x y]
 
 
 -- Question 6
