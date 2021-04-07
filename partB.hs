@@ -1,3 +1,4 @@
+-- Question 1
 data Expr = Val Int | App Op Expr Expr
 data Op = Add | Mul
 
@@ -13,6 +14,7 @@ values :: Expr -> [Int]
 values (Val n) = [n]
 values (App _ x y) = values x ++ values y
 
+-- Question 2
 delete :: Int -> [Int] -> [Int]
 
 delete n [] = []
@@ -20,6 +22,7 @@ delete n (x:xs)
     | (n == x) = xs
     | otherwise = x : delete n xs
 
+-- Question 3
 perms :: [Int] -> [[Int]]
 
 perms [] = [[]]
@@ -29,6 +32,7 @@ perms xs = do { x <- xs
             ; return $ x : ls }
 
 
+-- Question 4
 mySplit :: [Int] -> Int -> Bool -> [([Int], [Int])]
 
 mySplit xs n False = [splitAt n xs]
@@ -42,6 +46,7 @@ split xs = if 2 == (length xs)
             then mySplit xs 1 False
         else mySplit xs 1 True
 
+-- Question 5
 -- combine :: Expr -> Expr -> [Expr]
 -- combine l r = [App o x y | o <- [Add,Mul]]
 
@@ -54,6 +59,7 @@ split xs = if 2 == (length xs)
 --                 , e <- combine x y]
 
 
+-- Question 6
 -- solve :: [Int] -> Int -> [Expr]
 -- solve xs x = [e | xs' <- choices xs
 --                 , e <- exprs xs'
