@@ -66,8 +66,8 @@ exprs xs = [l | (ls,rs) <- split xs
 -- Question 6
 solve :: [Int] -> Int -> [Expr]
 
-solve xs x = [l | xs' <- pick xs
-                , l <- exprs xs'
+solve xs x = [l | ls <- pick xs
+                , l <- exprs ls
                 , eval l == x]
 
 pick :: [Int] -> [[Int]]
