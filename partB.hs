@@ -72,7 +72,6 @@ combinations n xs = [ xs !! i : x | i <- [0..(length xs)-1]
 
 choices :: [a] -> [[a]]
 
+-- Need to repeatedly call perms with less and less of the list
 choices [] = [[]]
-choices xs = [ x : ls | x <- xs
-               , let l = combinations x xs
-               , ls <- choices l]
+choices xs = [ x : xs | ]
