@@ -60,12 +60,12 @@ exprs xs = [l | (ls,rs) <- split xs
 
 -- Question 6
 solve :: [Int] -> Int -> [Expr]
-solve xs x = [l | xs' <- choices xs
+solve xs x = [l | xs' <- pick xs
                 , l <- exprs xs'
                 , eval l == x]
 
-choices :: [Int] -> [[Int]]
+pick :: [Int] -> [[Int]]
 
 -- Need to repeatedly call perms with less and less of the list
-choices [] = [[]]
-choices xs = [ ls | l <- [0 .. (length xs)], ls <- perms (take l xs)]
+pick [] = [[]]
+pick xs = [ ls | l <- [0 .. (length xs)], ls <- perms (take l xs)]
