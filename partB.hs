@@ -26,10 +26,9 @@ delete n (x:xs)
 perms :: [Int] -> [[Int]]
 
 perms [] = [[]]
-perms xs = do { x <- xs
-            ; let l = delete x xs
-            ; ls <- perms l
-            ; return $ x : ls }
+perms xs = [ ( x : ls )| x <- xs
+               , let l = delete x xs
+               , ls <- perms l]
 
 
 -- Question 4
