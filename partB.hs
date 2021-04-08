@@ -41,7 +41,7 @@ mySplit xs n True  = if n == (length xs - 2)
 
 split :: [Int] -> [([Int], [Int])]
 
-split xs = if 2 == (length xs)
+split xs = if (length xs) == 2
             then mySplit xs 1 False
         else mySplit xs 1 True
 
