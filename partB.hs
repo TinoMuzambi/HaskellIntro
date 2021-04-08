@@ -64,12 +64,6 @@ exprs xs = [l | (ls,rs) <- split xs
 --                 , l <- exprs xs'
 --                 , eval l == [x]]
 
-combinations :: Int -> [a] -> [[a]]
-
-combinations 0 _ = [[]]
-combinations n xs = [ xs !! i : x | i <- [0..(length xs)-1] 
-                                  , x <- combinations (n-1) (drop (i+1) xs) ]
-
 choices :: [Int] -> [[Int]]
 
 -- Need to repeatedly call perms with less and less of the list
