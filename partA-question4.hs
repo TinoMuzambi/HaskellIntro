@@ -1,7 +1,7 @@
 safetail :: [a] -> [a]
 
 safetail xs = if null xs
-                    then []
+                then []
                 else tail xs
 
 safetail2 :: [a] -> [a]
