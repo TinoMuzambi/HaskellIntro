@@ -53,10 +53,10 @@ combine x y = [App o x y | o <- [Add,Mul]]
 exprs :: [Int] -> [Expr]
 exprs [] = []
 exprs [n] = [Val n]
-exprs xs = [y | (ls,rs) <- split xs
+exprs xs = [l | (ls,rs) <- split xs
                 , x <- exprs ls
                 , y <- exprs rs
-                , y <- combine x y]
+                , l <- combine x y]
 
 
 -- Question 6
